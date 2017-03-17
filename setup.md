@@ -5,27 +5,27 @@ sidebar: home_sidebar
 permalink: /setup/
 ---
 
-This guide describes how to set up your development environment to run Flutter apps on
+This page describes how to set up your development environment to run Flutter apps on
 iOS or Android.
 
 ## Checklist
-To start coding Flutter apps, you'll need to perform all the tasks marked Required in this checklist.
+To start coding Flutter apps, complete all the tasks marked Required Now in this checklist.
 The remaining tasks can be deferred until later in the development cycle, when you're ready
 to test and iterate using a simulator or physical device.
 
 <table>
- <tr><th>Task</th><th>Required?</th></tr>
+ <tr><th>Task</th><th>Required Now?</th></tr>
  <tr>
   <td style="width:1600px;"><a href="#system-requirements">Verify your system meets the requirements for Flutter and dependencies</a></td><td align="center">Y</td>
  </tr>
  <tr>
-  <td><a href="#get-the-flutter-sdk">Clone the Flutter repo</a></td><td align="center">Y</td>
+  <td><a href="#clone-the-repo">Clone the Flutter repo</a></td><td align="center">Y</td>
  </tr>
  <tr>
-  <td><a href="#get-the-flutter-sdk">Update your path</a></td><td align="center">Y</td>
+  <td><a href="#update-your-path">Update your path</a></td><td align="center">Y</td>
  </tr>
  <tr>
-   <td><a href="#get-the-flutter-sdk">Run <code>flutter doctor</code> and resolve any issues found</a></td><td align="center">Y</td>
+   <td><a href="#run-flutter-doctor">Run <code>flutter doctor</code> and resolve any issues found</a></td><td align="center">Y</td>
  </tr>
  <tr>
    <td><a href="#editor-setup">Install and configure an IntelliJ IDE to develop Flutter apps</a></td><td align="center"></td>
@@ -46,20 +46,38 @@ inline error checking, and visual debugging features.
 
 To install and run Flutter, your development environment must meet these minimum requirements:
 
-* **Operating Systems**: Mac or Linux (64-bit). For Windows instructions (beta), see [Flutter on Windows](https://github.com/flutter/flutter/wiki/Flutter-on-Windows).
+* **Operating Systems**: Mac or Linux or Windows. (64-bit)
 * **Disk Space**: 700 MB on Mac, 600 MB on Linux, 400 MB on Windows (does not include disk space for Xcode or Android Studio).
-* **Tools**: Flutter depends on these command-line tools being available on your environment.
-  * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
+* **Tools**: Flutter depends on these command-line tools being available in your environment.
+  * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`(Mac and Linux), 
+  * Git with command-line support, PowerShell (Windows)
 
 ## Get the Flutter SDK
 
-1. To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path:
+To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path.
+Running `flutter doctor` shows any remaining dependencies you may need to install.
 
+### Clone the repo
+
+If this is the first time you're installing Flutter on this machine, clone the
+repository:
+
+```
+$ git clone https://github.com/flutter/flutter.git
+```
+To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
+
+### Update your path
+
+#### Mac and Linux
+
+You can update your PATH variable for the current session only, at the command line,
+or update it permanently for all terminal sessions by editing a file. 
+
+1. Add Flutter to your PATH environment variable by running:
    ```
-   $ git clone https://github.com/flutter/flutter.git
    $ export PATH=`pwd`/flutter/bin:$PATH
    ```
-
    The above command sets your PATH variable temporarily, for the current terminal window.
    The steps for modifying this variable permanently for all terminal sessions are machine-
    specific. Typically you add a line to a file that is executed whenever you open 
@@ -75,6 +93,18 @@ To install and run Flutter, your development environment must meet these minimum
    ```
    $ echo $PATH
    ```
+
+#### Windows
+
+1. Add Flutter to your PATH environment variable by opening 
+**Control Panel>System and Security>System>Advanced system settings>Environment Variables...**
+1. Modify the `PATH` system variable to add the full path to the `flutter\bin` directory.
+   For example, `C:\flutter\bin`.
+
+   If you don't have admin access to your machine, open **Control Panel>User Accounts>User Accounts>Change my environment variables**
+   and add a `PATH` user variable with the path to `flutter\bin` as its value. 
+
+### Run flutter doctor
 
 1. Run the following command to see if there are any dependencies you need to install to complete
 the setup:
@@ -103,7 +133,7 @@ itself. Subsequent runs should be much faster.
 
 The following sections describe how to perform these tasks and finish the setup process.
 You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
-are availabile for IntelliJ IDEA. See [IntelliJ Setup](/intellij-setup/)
+are available for IntelliJ IDEA. See [IntelliJ Setup](/intellij-setup/)
 for the steps to install the Flutter and Dart plugins.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
@@ -112,7 +142,7 @@ verify that you’ve set everything up correctly.
 The `flutter` tool uses Google Analytics to anonymously report feature usage statistics
 and basic crash reports. This data is used to help improve Flutter tools over time.
 Analytics is not sent on the very first run or for any runs involving `flutter config`,
-so you can opt-out of analytics before any data is sent. To disable reporting, 
+so you can opt out of analytics before any data is sent. To disable reporting, 
 type `flutter config --no-analytics` and to display the current setting, type 
 `flutter config`. See Google's privacy policy:[www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
 {: .alert-warning}
@@ -242,9 +272,9 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
 To prepare to run and test your Flutter app on Android, you'll need an Android device running
 Android 4.1 (API level 16) or higher.
 
-1. Enable developer mode on your device by visiting **`Settings > About phone`** and
+1. Enable developer mode on your device by visiting **`Settings>About phone`** and
 tapping the **Build number** line seven times.
-2. In **Settings > Developer options**, enable **USB debugging**.
+2. In **Settings>Developer options**, enable **USB debugging**.
 3. Using a USB cable, plug your phone into your computer. If prompted on your
 device, authorize your computer to access your device.
 4. In the terminal, run the `flutter devices` command to verify that Flutter recognizes your
