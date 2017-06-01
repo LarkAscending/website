@@ -1,11 +1,11 @@
 ---
 layout: tutorial
 title: "Building Layouts in Flutter"
-sidebar: home_sidebar
+
 permalink: /tutorials/layout/
 ---
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
@@ -47,10 +47,6 @@ some of the most common layout widgets are covered.
 
 <a name="building"></a>
 ## Building a layout
-
-This section walks you through the layout for the following screenshot:
-
-<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that you will build in this section">
 
 If you want a "big picture" understanding of the layout mechanism,
 start with [Flutter's approach to layout](#approach).
@@ -393,7 +389,7 @@ shown in the screenshots. You can add interactivity to this layout by following
 <a name="approach"></a>
 ## Flutter's approach to layout
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -451,13 +447,13 @@ the children should occupy.
 <a name="lay-out-a-widget"></a>
 ## Lay out a widget
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 {% comment %}
 * Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
-  [Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
+  [Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
   or [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
 * Add it to a layout widget, such as
   [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
@@ -567,7 +563,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(config.title),
+        title: new Text(widget.title),
       ),
       body: new Center(
         child: new Text('Hello World', style: new TextStyle(fontSize: 32.0)),
@@ -610,7 +606,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      decoration: new BoxDecoration(backgroundColor: Colors.white),
+      decoration: new BoxDecoration(color: Colors.white),
       child: new Center(
         child: new Text('Hello World',
             style: new TextStyle(fontSize: 40.0, color: Colors.black87)),
@@ -645,7 +641,7 @@ One of the most common layout patterns is to arrange widgets vertically
 or horizontally. You can use a Row widget to arrange widgets horizontally,
 and a Column widget to arrange widgets vertically.
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -969,8 +965,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // DefaultTextStyle.merge allows you to create a default text
     // style that is inherited by its child and all subsequent children.
-    var iconList = new DefaultTextStyle.merge(
-      context: context,
+    var iconList = DefaultTextStyle.merge(
       style: descTextStyle,
       child: new Container(
         padding: new EdgeInsets.all(20.0),
@@ -1188,7 +1183,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     var container = new Container(
       decoration: new BoxDecoration(
-        backgroundColor: Colors.black26,
+        color: Colors.black26,
       ),
       child: new Column(
         children: [
@@ -1312,7 +1307,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(config.title),
+        title: new Text(widget.title),
       ),
       body: new Center(
         child: buildGrid(),
@@ -1465,7 +1460,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         new Container(
           decoration: new BoxDecoration(
-            backgroundColor: Colors.black45,
+            color: Colors.black45,
           ),
           child: new Text(
             'Mia B',
@@ -1499,7 +1494,7 @@ In Flutter, a Card features slightly rounded corners
 and a drop shadow, giving it a 3D effect.
 Changing a Card's `elevation`
 property allows you to control the drop shadow effect.
-Setting the elevation to 24, for example, visually lifts the Card further
+Setting the elevation to 24.0, for example, visually lifts the Card further
 from the surface and causes the shadow to become more dispersed.
 For a list of supported elevation values, see
 [Elevation and

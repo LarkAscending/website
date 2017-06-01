@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var container = new Container(
       decoration: new BoxDecoration(
-        backgroundColor: Colors.black26,
+        color: Colors.black26,
       ),
       child: new Column(
         children: [
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(config.title),
+        title: new Text(widget.title),
       ),
       body: new Center(
         child: container,

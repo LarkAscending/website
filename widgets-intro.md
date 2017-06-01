@@ -1,7 +1,6 @@
 ---
 layout: page
 title: A Tour of the Flutter Widget Framework
-sidebar: home_sidebar
 permalink: /widgets-intro/
 ---
 
@@ -66,7 +65,7 @@ in widgets that represent the underlying render object.
 Basic widgets
 -------------
 
-_Main article: [Widgets Overview - Layout Models](https://flutter.io/widgets/#layout-models)_
+_Main article: [Widgets Overview - Layout Models](https://flutter.io/widgets/layout)_
 
 Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
@@ -123,7 +122,7 @@ class MyAppBar extends StatelessWidget {
     return new Container(
       height: 56.0, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: new BoxDecoration(backgroundColor: Colors.blue[500]),
+      decoration: new BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
       child: new Row(
         // <Widget> is the type of items in the list.
@@ -166,7 +165,7 @@ class MyScaffold extends StatelessWidget {
             child: new Center(
               child: new Text('Hello, world!'),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -222,10 +221,10 @@ variety of ways. Finally, `MyScaffold` uses a
 [`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html) to
 fill the remaining space with its body, which consists a centered message.
 
-Using material design
+Using Material Design
 ---------------------
 
-_Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/#material-design-widgets)_
+_Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/material)_
 
 Flutter provides a number of widgets that help you build apps that follow
 Material Design. A Material Design app start with the
@@ -329,7 +328,7 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: new BoxDecoration(
           borderRadius: new BorderRadius.circular(5.0),
-          backgroundColor: Colors.lightGreen[500],
+          color: Colors.lightGreen[500],
         ),
         child: new Center(
           child: new Text('Engage'),
@@ -643,7 +642,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: new ListView(
         padding: new EdgeInsets.symmetric(vertical: 8.0),
-        children: config.products.map((Product product) {
+        children: widget.products.map((Product product) {
           return new ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
@@ -686,17 +685,17 @@ again.
 
 To access properties of the current `ShoppingList`, the `_ShoppingListState` can
 use its
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 property. If the parent rebuilds and creates a new `ShoppingList`, the
 `_ShoppingListState` will also rebuild with the new
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 value. If you wish to be notified when the
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 property changes, you can override the
-[`didUpdateConfig`](https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateConfig)
-function, which is passed the `oldConfig` to let you compare the old
-configuration with the current
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config).
+[`didUpdateWidget`](https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateWidget)
+function, which is passed `oldWidget` to let you compare the old widget with
+the current
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget).
 
 When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
 internal state by either adding or removing a product from `_shoppingCart`. To
@@ -789,21 +788,3 @@ You can use global keys to uniquely identify child widgets. Global keys must be
 globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
-
-{% comment %}
-    Need to revisit the following para, as the framework takes care of this now.
-
-Some widgets, such as
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html) require
-global keys because they can hold focus, which means they receive any text the
-user enters into the app. The
-[`Focus`](https://docs.flutter.io/flutter/widgets/Focus-class.html) widget
-keeps track of which
-[`State`](https://docs.flutter.io/flutter/material/State-class.html)
-object is focused by remembering its
-[`GlobalKey`](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html).
-That way the same
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html) widget
-remains focused even if it moves around in the widget tree.
-
-{% endcomment %}

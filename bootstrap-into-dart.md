@@ -1,9 +1,15 @@
 ---
 layout: page
 title: Bootstrap into Dart
-sidebar: home_sidebar
+
 permalink: /bootstrap-into-dart/
 ---
+
+<style>
+dd {
+    margin-bottom: 8px;
+}
+</style>
 
 New to the [Dart](https://www.dartlang.org) language?
 We compiled our favorite resources to
@@ -21,6 +27,11 @@ easy for you to learn, too.
 [Library tour](https://www.dartlang.org/docs/dart-up-and-running/ch03.html)
 : A good overview of Dart's powerful core libraries. Learn about
   Dart's support for collections, async, math, numbers, strings, JSON, and more.
+
+[Intro to Dart for Java Developers Codelab](https://codelabs.developers.google.com/codelabs/from-java-to-dart/index.html#0">Intro to Dart for Java Developers - Codelab)
+: Use your Java knowledge to get up and running quickly with Dart. Learn about
+  classes, constructors, parameters, and interfaces with examples from the Java
+  Tutorial. 
 
 [Effective Dart](https://www.dartlang.org/effective-dart/)
 : Guides for style, authoring documentation, usage, and more.

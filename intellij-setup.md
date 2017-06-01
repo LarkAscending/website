@@ -1,7 +1,7 @@
 ---
 layout: page
 title: IDE Setup
-sidebar: home_sidebar
+
 permalink: /intellij-setup/
 ---
 
@@ -20,12 +20,9 @@ editing, running, and debugging Flutter apps.
 
 You can use the IntelliJ plug-ins with one of the following JetBrains IDEs:
 
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/previous.html), Community (free) edition, version 2016.3.
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/previous.html), Ultimate edition, version 2016.3.
-* [IntelliJ WebStorm](https://confluence.jetbrains.com/display/WI/Previous+WebStorm+Releases), version 2016.3.
-
-{% include note.html content="IntelliJ IDEA / WebStorm version 2017.1 is
-currently *not* supported. We hope to support it the next plugin release." %}
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), Community (free) edition, version 2017.1 or later.
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), Ultimate edition, version 2017.1 or later.
+* [IntelliJ WebStorm](https://www.jetbrains.com/webstorm/download), version 2017.1 or later.
 
 Android Studio (and various other JetBrains editors) is currently not supported.
 
@@ -42,7 +39,7 @@ installs it for you.
 To install the plugins:
 
 1. Start IntelliJ.
-1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux).
+1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Windows & Linux).
 1. Select **Browse repositories…**,  select the Flutter plug-in and click `install`.
 1. Click `Yes` when prompted to install the Dart plugin.
 1. Click `Restart IntelliJ IDEA`.
@@ -52,8 +49,8 @@ navigation panel when you create a new project.
 
 ### Configuring the Flutter plugin
 
-1. Open preferences (**Preferences** on macOS, **File>Settings** on Linux).
+1. Open preferences (**Preferences** on macOS, **File>Settings** on Windows & Linux).
 1. Select **Languages & Frameworks>Flutter**.
 1. Enter or browse to your Flutter SDK directory in **Flutter SDK path**. This is the top-level `flutter`
-   directory, without the `bin` subdirectory. For example, `/Users/obiwan/flutter`.
+   directory, without the `bin` subdirectory. For example, `c:\Users\obiwan\flutter` / `/Users/obiwan/flutter`.
 1. Click **OK**

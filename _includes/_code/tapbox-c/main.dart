@@ -70,7 +70,7 @@ class _TapboxCState extends State<TapboxC> {
   }
 
   void _handleTap() {
-    config.onChanged(!config.active);
+    widget.onChanged(!widget.active);
   }
 
   Widget build(BuildContext context) {
@@ -84,15 +84,15 @@ class _TapboxCState extends State<TapboxC> {
       child: new Container(
         child: new Center(
           child: new Text(
-            config.active ? 'Active' : 'Inactive',
+            widget.active ? 'Active' : 'Inactive',
             style: new TextStyle(fontSize: 32.0, color: Colors.white),
           ),
         ),
         width: 200.0,
         height: 200.0,
         decoration: new BoxDecoration(
-          backgroundColor:
-              config.active ? Colors.lightGreen[700] : Colors.grey[600],
+          color:
+              widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
               ? new Border.all(
                   color: Colors.teal[700],

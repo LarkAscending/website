@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Design Principles
-sidebar: home_sidebar
+
 permalink: /design-principles/
 ---
 
@@ -107,6 +107,61 @@ our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html
 **If the trees or dashboards are showing any regressions, only fixes
 that improve the situation are allowed to go in.**
 
+
+Handling breaking changes
+-------------------------
+
+We're attempting to stablize the APIs for the
+[packages in the SDK](https://github.com/flutter/flutter/tree/master/packages).
+To a make change that will require developers to change their code:
+
+ 1. File an issue or create a pull request with the `prod: API break`
+    label.
+
+ 2. Socialize the idea of making that API break with the project, perhaps by
+    discussing the change in the issue tracker on on the pull request.
+
+ 3. If folks agree that the benefits of changing the API outweigh the stablity
+    costs, you can proceed with the normal code review process for making
+    changes.
+
+ 5. Once your change lands, you should e-mail
+    <mailto:flutter-dev@googlegroups.com>. The e-mail should include the
+    following:
+
+    - A subject line that clearly summarises the change and sounds like it
+      matters (so that people can spot these e-mails among the noise).
+
+    - A summary of each change.
+
+    - Clear mechanical steps for porting the code from the old form to the new
+      form, if possible. If not possible, clear steps for figuring out how to
+      port the code.
+
+    - A brief justification for the change.
+
+    - A sincere offer to help port code, which includes the preferred venue for
+      contacting the person who made the change.
+      
+Where possible, even "breaking" changes should be made in a backwards-compatible way,
+for example by introducing a new class and marking the old class `@deprecated`. When
+doing this, include a description of how to transition in the deprecation notice, for
+example:
+
+<!-- skip -->
+```dart
+@Deprecated('FooInterface has been deprecated; it is recommended that you transition to the new FooDelegate.')
+class FooInterface {
+  /// ...
+}
+```
+
+#### Google-only responsibilities
+
+If you work for Google, you have the added responsibility of updating Google's
+internal copy of Flutter and fixing any broken call-sites reasonably quickly
+after merging the upstream change. For instructions on how to do this, see
+[go/roll-flutter](http://goto.google.com/roll-flutter) (Google-only, sorry).
 
 Lazy programming
 ----------------

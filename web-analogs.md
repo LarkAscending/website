@@ -1,9 +1,10 @@
 ---
-layout: code_comp_page
+layout: page
 title: HTML/CSS Analogs in Flutter
-sidebar: home_sidebar
 permalink: /web-analogs/
 ---
+
+<link rel="stylesheet" href="/css/two_column.css">
 
 * TOC Placeholder
 {:toc}
@@ -201,7 +202,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: new EdgeInsets.all(16.0),
 [[highlight]]      width: 240.0, [[/highlight]]//max-width is 240.0
@@ -264,7 +265,7 @@ var container = new Container( // grey box
             style: bold24Roboto,
           ),
           decoration: new BoxDecoration(
-            backgroundColor: Colors.red[400],
+            color: Colors.red[400],
           ),
           padding: new EdgeInsets.all(16.0),
         ),
@@ -326,7 +327,7 @@ var container = new Container( // gray box
           textAlign: TextAlign.center,
         ),
         decoration: new BoxDecoration(
-          backgroundColor: Colors.red[400],
+          color: Colors.red[400],
         ),
         padding: new EdgeInsets.all(16.0),
       ),
@@ -348,7 +349,7 @@ To scale a widget up or down, nest it in a [Transform](https://docs.flutter.io/f
 widget. Use the Transform widget’s ```alignment``` and ```origin``` properties to specify 
 the transform origin (fulcrum) in relative and absolute terms, respectively.
 
-For a simple scaling operation along the x-axis, create a new [Matrix4](https://docs.flutter.io/flutter/widgets/Matrix4-class.html)
+For a simple scaling operation along the x-axis, create a new [Matrix4](https://docs.flutter.io/flutter/rendering/Matrix4-class.html)
 identity object and use its scale() method to specify the scaling factor.
 
 When you scale a parent widget, all its child widgets are scaled accordingly.
@@ -390,7 +391,7 @@ var container = new Container( // gray box
           textAlign: TextAlign.center,
         ),
         decoration: new BoxDecoration(
-          backgroundColor: Colors.red[400],
+          color: Colors.red[400],
         ),
         padding: new EdgeInsets.all(16.0),
       ),
@@ -571,7 +572,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
 [[highlight]]        borderRadius: new BorderRadius.all(
           const Radius.circular(8.0),
         ), [[/highlight]]
@@ -634,7 +635,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
 [[highlight]]        boxShadow: <BoxShadow>[
           new BoxShadow (
             color: const Color(0xcc000000),
@@ -654,7 +655,7 @@ var container = new Container( // grey box
   width: 320.0,
   height: 240.0,
   decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
+    color: Colors.grey[300],
   ),
   margin: new EdgeInsets.only(bottom: 16.0),
 );
@@ -709,7 +710,7 @@ var container = new Container( // grey box
 [[highlight]]        textAlign: TextAlign.center, [[/highlight]]
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
 [[highlight]]        shape: BoxShape.circle, [[/highlight]]
       ),
       padding: new EdgeInsets.all(16.0),
@@ -781,7 +782,7 @@ var container = new Container( // grey box
         ),
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: new EdgeInsets.all(16.0),
     ),
@@ -836,7 +837,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: new EdgeInsets.all(16.0),
     ),

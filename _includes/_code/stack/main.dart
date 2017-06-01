@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         new Container(
           decoration: new BoxDecoration(
-            backgroundColor: Colors.black45,
+            color: Colors.black45,
           ),
           child: new Text(
             'Mia B',
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(config.title),
+        title: new Text(widget.title),
       ),
       body: new Center(
         child: stack,

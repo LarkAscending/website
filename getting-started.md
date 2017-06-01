@@ -1,19 +1,21 @@
 ---
 layout: page
 title: Getting Started with Flutter
-sidebar: home_sidebar
+
 permalink: /getting-started/
 ---
 
 This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
+
+{% include note.html content="_Flutter is an alpha, open-source project_." %}
 
 * Placeholder for TOC
 {:toc}
 
 ## Before you begin
 
-To write Flutter apps, you will need to install the Flutter SDK. You also need to set up a Linux or
-Mac development machine to run and test your apps on Android or iOS. See
+To write Flutter apps, you will need to install the Flutter SDK. You also need to set up a 
+Windows, macOS, or Linux development machine to run and test your apps on Android or iOS. See
 [Flutter Setup](../setup) for instructions on how to set up your development environment.
 
 ## Creating your first Flutter app
@@ -93,7 +95,7 @@ To edit your code and hot reload changes:
 
 1. Run your app with 'Run' or 'Debug'.
 1. Make desired changes in your source code (without stopping the app).
-1. Click the Hot Reload button (the button with the lightning bolt and the green run triangle).
+1. Click the Hot Reload button (the button with the lightning bolt icon).
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot reload feature can be found on the page
@@ -104,9 +106,9 @@ changes are supported by the hot reload feature can be found on the page
 Please reach out to us at our [mailing list][mailinglist]. We'd love
 to hear from you!
 
-You might also want to check out our
-[Introduction to Flutter's Widget Framework](/widgets-intro/)
-and our [Debugging guide](/debugging).
+You might also want to check out:
+* [Building Beautiful UIs with Flutter - Codelab](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)
+* [Introduction to Flutter's Widget Framework](/widgets-intro/)
 
 Happy Fluttering!
 

@@ -23,7 +23,7 @@ A tldr version follows:
 `ruby --version`
 
 1. Ensure you have [Bundler](http://bundler.io/) installed; if not install with:<br>
-`sudo gem install bundler`
+`gem install bundler`
 
 1. Install all dependencies:<br>
 `bundle install`
@@ -52,7 +52,7 @@ to the front matter of each page, and including some HTML.
 ---
 layout: tutorial
 title: "Constraints"
-sidebar: home_sidebar
+
 permalink: /tutorials/layout/constraints.html
 prev-page: /tutorials/layout/properties.html
 prev-page-title: "Container Properties"
