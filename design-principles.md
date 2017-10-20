@@ -49,19 +49,27 @@ also many other benefits of code reviews:
    have, and so may have a fresh perspective and may find you a better
    way to solve the problem.
 
+We recommend you consider
+[these suggestions](https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html)
+for addressing code review comments on your PR.
+ 
 If you're working on a big patch, don't hesitate to get reviews early,
 before you're ready to check code in. Also, don't hesitate to ask for
-multiple people to review your code.
+multiple people to review your code, and don't hesitate to provide unsolicited
+comments on other people's PRs. The more reviews the better.
 
 Reviewers should carefully read the code and make sure they understand
 it. A reviewer should check the code for both high level concerns,
 such as whether the code's structure makes sense, as well as
-readability and adherence to the style guide. Reviewers should not
-give an LGTM unless the patch has tests that verify all the affected
-code, or unless a test would make no sense. If you review a patch, you
-are sharing the responsibility for the patch with its author. You
-should only give an LGTM if you would feel confident answering
-questions about the code.
+readability and adherence to the [Flutter style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo).
+Use [these best practices](https://mtlynch.io/human-code-reviews-1/)
+when reviewing code and providing comments.
+
+Reviewers should not give an LGTM unless the patch has tests that verify
+all the affected code, or unless a test would make no sense. If you
+review a patch, you are sharing the responsibility for the patch with
+its author. You should only give an LGTM if you would feel confident
+answering questions about the code.
 
 A reviewer may in some circumstances consider the code satisfactory
 without having fully reviewed or understood it. If a reviewer has not
@@ -88,20 +96,17 @@ runs a bunch of precommit checks (see the tests for the
 [framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.dart),
 the [engine](https://github.com/flutter/engine/blob/master/travis/build.sh),
 and the [website](https://github.com/flutter/website/blob/master/tool/travis.sh)).
-You can run these locally as well. For the engine repository, Travis
+These checks include checks on comments, so make sure you wait for the
+green light even if your patch is _obviously_ fine!
+
+For the engine repository, Travis
 does not actually _build_ the engine, so you should make sure to do
 that locally first too before checking anything in.
-
-The only time it is ok to check code in without Travis having given
-the go-ahead is if the tests are already failing, and your fix is
-intended to improve matters, and you're going to watch the results
-once you've checked it in (in which case the bots are essentially
-doing the same job as Travis would have on your PR).
 
 Make sure all the trees and dashboards are green before checking in:
 the [infra waterfall](https://build.chromium.org/p/client.flutter/waterfall),
 our [travis dashboard](https://travis-ci.org/flutter/flutter/builds),
-our [test dashboard](https://flutter-dashboard.appspot.com/build.html) (Google-only, sorry), and
+our [test dashboard](https://flutter-dashboard.appspot.com/build.html), and
 our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html) (Google-only, sorry).
 
 **If the trees or dashboards are showing any regressions, only fixes
@@ -113,26 +118,21 @@ Handling breaking changes
 
 We're attempting to stablize the APIs for the
 [packages in the SDK](https://github.com/flutter/flutter/tree/master/packages).
-To a make change that will require developers to change their code:
+To make a change that will require developers to change their code:
 
  1. File an issue or create a pull request with the `prod: API break`
     label.
 
- 2. Socialize the idea of making that API break with the project, perhaps by
-    discussing the change in the issue tracker on on the pull request.
-
- 3. If folks agree that the benefits of changing the API outweigh the stablity
-    costs, you can proceed with the normal code review process for making
-    changes.
-
- 5. Once your change lands, you should e-mail
-    <mailto:flutter-dev@googlegroups.com>. The e-mail should include the
-    following:
+ 2. Send an e-mail to <mailto:flutter-dev@googlegroups.com> to socialize
+    your proposed change. The e-mail should include the following:
 
     - A subject line that clearly summarises the change and sounds like it
       matters (so that people can spot these e-mails among the noise).
 
-    - A summary of each change.
+    - A summary of each change you propose.
+    
+    - A link to the issue you filed in step 1, and any PRs you may have already
+      posted relating to this change.
 
     - Clear mechanical steps for porting the code from the old form to the new
       form, if possible. If not possible, clear steps for figuring out how to
@@ -143,6 +143,15 @@ To a make change that will require developers to change their code:
     - A sincere offer to help port code, which includes the preferred venue for
       contacting the person who made the change.
       
+    - A request that people notify you if this change will be a problem,
+      perhaps by discussing the change in the issue tracker on on the pull request.
+
+ 3. If folks agree that the benefits of changing the API outweigh the stablity
+    costs, you can proceed with the normal code review process for making
+    changes. You should leave some time between steps 2 and 3 (at a bare minimum
+    24 hours during the work week so that people in all time zones have had a
+    chance to see it, but ideally a week or so).
+
 Where possible, even "breaking" changes should be made in a backwards-compatible way,
 for example by introducing a new class and marking the old class `@deprecated`. When
 doing this, include a description of how to transition in the deprecation notice, for
@@ -156,12 +165,15 @@ class FooInterface {
 }
 ```
 
+If you use `@deprecated`, make sure to remember to actually remove the feature a few
+weeks later, do not just leave it forever!
+
+
 #### Google-only responsibilities
 
 If you work for Google, you have the added responsibility of updating Google's
 internal copy of Flutter and fixing any broken call-sites reasonably quickly
-after merging the upstream change. For instructions on how to do this, see
-[go/roll-flutter](http://goto.google.com/roll-flutter) (Google-only, sorry).
+after merging the upstream change.
 
 Lazy programming
 ----------------

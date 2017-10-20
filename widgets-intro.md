@@ -9,7 +9,7 @@ permalink: /widgets-intro/
 
 ## Introduction
 
-Flutter widgets are built using a functional-reactive framework, which takes
+Flutter widgets are built using a modern react-style framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
 that you build your UI out of widgets. Widgets describe what their view
 should look like given their current configuration and state. When a widget's
@@ -227,7 +227,7 @@ Using Material Design
 _Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/material)_
 
 Flutter provides a number of widgets that help you build apps that follow
-Material Design. A Material Design app start with the
+Material Design. A Material Design app starts with the
 [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
 widget, which builds a number of useful widgets at the root of your app,
 including a
@@ -252,7 +252,7 @@ void main() {
 class TutorialHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Scafold is a layout for the major material design widgets.
+    // Scaffold is a layout for the major Material Design widgets.
     return new Scaffold(
       appBar: new AppBar(
         leading: new IconButton(

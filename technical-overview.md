@@ -15,7 +15,7 @@ The goal is to enable developers to deliver high-performance apps that feel natu
 on different platforms. We embrace differences in scrolling behaviors,
 typography, icons, and more.
 
-<object type="image/svg+xml" data="images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
+<object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
 This is a demo app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter and setting
@@ -35,28 +35,29 @@ What are some advantages of Flutter? It helps you:
 *   Be highly productive
     *   Develop for iOS and Android from a single codebase
     *   Do more with less code, even on a single OS, with a modern, expressive
-language and a declarative approach
+        language and a declarative approach
     *   Prototype and iterate easily
-        *   Experiment by changing code and reloading as your app runs (with hot reload)
+        *   Experiment by changing code and reloading as your app runs (with
+            hot reload)
         *   Fix crashes and continue debugging from where the app left off
 *   Create beautiful, highly-customized user experiences
-    *   Benefit from a rich set of Material Design and Cupertino (iOS-flavor) widgets built using
-        Flutter's own framework
-    *   Realize custom, beautiful, brand-driven designs, without the limitations
-of OEM widget sets
+    *   Benefit from a rich set of Material Design and Cupertino (iOS-flavor)
+        widgets built using Flutter's own framework
+    *   Realize custom, beautiful, brand-driven designs, without the
+        limitations of OEM widget sets
 
 ## Core principles
 
-Flutter includes a functional-reactive framework, a 2D rendering engine, ready-made
-widgets, and development tools. These components work together to help you
-design, build, test, and debug apps. Everything is organized around a few core
+Flutter includes a modern react-style framework, a 2D rendering engine,
+ready-made widgets, and development tools. These components work together to help
+you design, build, test, and debug apps. Everything is organized around a few core
 principles.
 
 ### Everything's a Widget
 
-Widgets are the basic building blocks of every Flutter app. Each widget is an
+Widgets are the basic building blocks of a Flutter app's user interface. Each widget is an
 immutable declaration of part of the user interface.  Unlike other frameworks that
-separate views, controllers, layouts, and other properties, Flutter has a
+separate views, view controllers, layouts, and other properties, Flutter has a
 consistent, unified object model: the widget.
 
 A widget can define:
@@ -64,7 +65,6 @@ A widget can define:
 *   a structural element (like a button or menu)
 *   a stylistic element (like a font or color scheme)
 *   an aspect of layout (like padding)
-*   some business logic
 *   and so on...
 
 Widgets form a hierarchy based on composition.  Each widget nests inside, and
@@ -165,7 +165,7 @@ These widgets subclass [StatefulWidget](https://docs.flutter.io/flutter/widgets/
 (rather than [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
 and store their mutable state in a subclass of [State](https://docs.flutter.io/flutter/widgets/State-class.html).
 
-<object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg"></object>
+<object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg" style="width: 85%; height: 85%"></object>
 
 Whenever you mutate a State object (e.g., increment the counter), you must call
 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to

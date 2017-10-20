@@ -57,7 +57,12 @@ $on-laptop:        800px;
         "sidebar",
         "tutorial",
         "prism",
+        "prism_overrides",
         "code_pre",
         "catalog",
         "homepage"
 ;
+
+aside > :not(pre) > code[class*="language-"], aside > pre[class*="language-"] {
+    background: inherit;
+}
